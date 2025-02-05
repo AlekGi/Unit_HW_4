@@ -25,7 +25,9 @@ public class BookServiceTest {
     @Test
     void testFindBookById() {
         String id = "1";
-        Book book = new Book(id, "Book1", "Author1");
+        String title = "Book1";
+        String author = "Author1";
+        Book book = new Book(id, title, author);
         when(bookRepo.findById(id)).thenReturn(book);
         Book bookMatch = bookService.findBookById(id);
         verify(bookRepo).findById(id);
